@@ -1,8 +1,8 @@
-import tkinter as tk
+import tkinter
 from typing import Union
 
 
-def center_on_screen(window: Union[tk.Tk, tk.Toplevel]):
+def center_on_screen(window: Union[tkinter.Tk, tkinter.Toplevel]):
     """Center a window on the screen."""
     window.update_idletasks()
     width = window.winfo_width()
@@ -13,7 +13,7 @@ def center_on_screen(window: Union[tk.Tk, tk.Toplevel]):
     window.geometry(f"{width}x{height}+{x_coordinate}+{y_coordinate}")
 
 
-def center_on_parent(root: tk.Tk, window: tk.Toplevel):
+def center_on_parent(root: tkinter.Tk, window: tkinter.Toplevel):
     """Center a window on its parent."""
     window.update_idletasks()
     height = window.winfo_height()
@@ -25,7 +25,7 @@ def center_on_parent(root: tk.Tk, window: tk.Toplevel):
     window.geometry(f"{width}x{height}+{x_coordinate}+{y_coordinate}")
 
 
-def center(root: tk.Tk, window: Union[tk.Tk, tk.Toplevel]):
+def center(root: tkinter.Tk, window: Union[tkinter.Tk, tkinter.Toplevel]):
     """Center a window on its parent or the screen if there is no parent."""
     if window.winfo_parent():
         center_on_parent(root, window)
